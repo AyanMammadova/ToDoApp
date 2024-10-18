@@ -72,17 +72,17 @@ function Todo() {
                                         <div>
                                         <button onClick={()=>{
                                             edit(i)
-                                            }}className="text-[.7em] sm:text-[1em] sm:ml-2 mx-[1px]  flex-no-shrink p-2  sm:border-2 rounded text-red border-red bg-[#d6ba88] hover:text-white hover:bg-[#FF7900] ">Edit
+                                            }}className="text-[.7em] sm:text-[1em] sm:ml-2 mx-[1px]  flex-no-shrink p-1  sm:border-2 rounded text-red border-red bg-[#d6ba88] hover:text-white hover:bg-[#FF7900] ">Edit
                                         </button>
 
                                         <button onClick={()=>{
                                             finish(i)
-                                        }} className="text-[.7em] sm:text-[1em] flex-no-shrink p-2 sm:ml-4 sm:mr-2 mx-[1px] sm:border-2 rounded hover:text-white  bg-[#a2dca2]  border-green hover:bg-[green]">Done
+                                        }} className="text-[.7em] sm:text-[1em] flex-no-shrink p-1 sm:ml-4 sm:mr-2 mx-[1px] sm:border-2 rounded hover:text-white  bg-[#a2dca2]  border-green hover:bg-[green]">Done
                                         </button>
 
                                         <button onClick={()=>{
                                             del(i)
-                                            }}className="text-[.7em] sm:text-[1em] flex-no-shrink p-2 sm:ml-2 mx-[1px] sm:border-2 rounded text-red border-red bg-[#e49797] hover:text-white hover:bg-[red] ">Remove
+                                            }}className="text-[.7em] sm:text-[1em] flex-no-shrink p-1 sm:ml-2 mx-[1px] sm:border-2 rounded text-red border-red bg-[#e49797] hover:text-white hover:bg-[red] ">Remove
                                         </button>
                                         </div>
                                     </div>
