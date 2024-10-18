@@ -46,7 +46,7 @@ function Todo() {
                 return(
                     <div key={i} className={`w-full fixed justify-center items-center h-[100vh] bg-[#80808080] ${item.iseditable ? 'flex' : 'hidden'} `}>
                         <div className='flex rounded-[50px] border-2 border-gray-700'>
-                            <input contentEditable='true' onChange={(e)=>{handleEdit(i,e.target.value)}} value={`${item.iseditable ? item.text : ''}`} type="text" className='h-[50px] rounded-tl-[50px] rounded-bl-[50px]  bg-slate-200'/>
+                            <input contentEditable='true' onChange={(e)=>{handleEdit(i,e.target.value)}} value={`${item.iseditable ? item.text : ''}`} type="text" className=' h-[50px] rounded-tl-[50px] rounded-bl-[50px]  bg-slate-200'/>
                             <i onClick={()=>closeInput(i)} className="fa-solid fa-check h-[50px] flex items-center justify-center bg-slate-200 rounded-tr-[50px] rounded-br-[50px] w-[30px] hover:bg-slate-400"></i>
                         </div>
                     </div>
@@ -60,29 +60,31 @@ function Todo() {
                             <input value={todo} onChange={(e)=>{setTodo(e.target.value)}} 
                             className="shadow appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-darker " placeholder="Add Todo"/>
                            
-                            <button onClick={addTodo} className="flex-no-shrink p-2 border-2 rounded text-teal border-teal bg-[#9fc1c1] hover:text-white hover:bg-[teal]">Add</button>
+                            <button onClick={addTodo} className="text-[.9em] sm:text-[1em] flex-no-shrink p-2 border-2 rounded text-teal border-teal bg-[#9fc1c1] hover:text-white hover:bg-[teal]">Add</button>
                         </div>
                     </div>
                     <div>
                         {
                             todoArr.map((item,i)=>{
                                 return(
-                                    <div key={i}  className="flex mb-4 items-center">
-                                        <p  className={`w-full text-grey-darkest font-bold ${item.isfinished ? 'line-through decoration-[red] text-[red]' : '' }`}>{item.text}</p>
+                                    <div key={i}  className="flex mb-4 items-center justify-between">
+                                        <p  className={`overflow-hidden whitespace-nowrap overflow-ellipsis w-[40%] text-grey-darkest font-bold ${item.isfinished ? 'line-through decoration-[red] text-[red]' : '' }`}>{item.text}</p>
+                                        <div>
                                         <button onClick={()=>{
                                             edit(i)
-                                            }}className="flex-no-shrink p-2 ml-2 border-2 rounded text-red border-red bg-[#d6ba88] hover:text-white hover:bg-[#FF7900] ">Edit
+                                            }}className="text-[.7em] sm:text-[1em] sm:ml-2 mx-[1px]  flex-no-shrink p-2  sm:border-2 rounded text-red border-red bg-[#d6ba88] hover:text-white hover:bg-[#FF7900] ">Edit
                                         </button>
 
                                         <button onClick={()=>{
                                             finish(i)
-                                        }} className="flex-no-shrink p-2 ml-4 mr-2 border-2 rounded hover:text-white  bg-[#a2dca2]  border-green hover:bg-[green]">Done
+                                        }} className="text-[.7em] sm:text-[1em] flex-no-shrink p-2 sm:ml-4 sm:mr-2 mx-[1px] sm:border-2 rounded hover:text-white  bg-[#a2dca2]  border-green hover:bg-[green]">Done
                                         </button>
 
                                         <button onClick={()=>{
                                             del(i)
-                                            }}className="flex-no-shrink p-2 ml-2 border-2 rounded text-red border-red bg-[#e49797] hover:text-white hover:bg-[red] ">Remove
+                                            }}className="text-[.7em] sm:text-[1em] flex-no-shrink p-2 sm:ml-2 mx-[1px] sm:border-2 rounded text-red border-red bg-[#e49797] hover:text-white hover:bg-[red] ">Remove
                                         </button>
+                                        </div>
                                     </div>
                                 )
                             })
