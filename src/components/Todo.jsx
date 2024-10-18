@@ -5,7 +5,8 @@ function Todo() {
     const [todoArr,setTodoArr]=useState([])
     // const [isfinished,setIsfinished]=useState(false)
     function addTodo(){
-        if(todo=='')return
+        let trimmedtodo=todo.trim()
+        if(trimmedtodo=='')return
         setTodoArr([...todoArr,{text:todo,isfinished:false,iseditable:false}])
         console.log(todoArr)
         setTodo('')
